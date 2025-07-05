@@ -11,13 +11,11 @@ build
 .clang-tidy
 checks.json
 sdkconfig
-sdkconfig.defaults
 banned_words.json
 /logs
 sdkconfig.old
 dependencies.lock
 dependencies.lock
-sdkconfig.default
 idf55.ps1
 /scripts/site/node_modules
 scripts/site/entry.js
