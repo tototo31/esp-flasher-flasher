@@ -1,0 +1,46 @@
+# ESP based Multi ESP flasher
+
+## The idea
+
+The goal is to create a device that can flash another esp32 based device offline with a user selected binary file.
+
+The binary file should be located on an SD card, and can be specifically selected by the user at the time of upload.
+
+The device should ideally be able to support flashing multiple boards either back to back or simultaneously.
+
+## Assumptions
+
+* each board will need its own programming bus to detect failures
+* Only uart, and USB CDC are fully supported
+	* this means each esp will need its own 2 pin set
+	* USB CDC is not supported on chips older than the esp32s2 (aka CYDs)
+
+
+## Supported devices
+* ESP32 based flash host
+* ESP32 based targets
+
+### Necessary Hardware
+* SPI sd card reader
+* GPIO dedicated to flashing other boards
+
+## Inspiration
+* [esp-batch-flash](https://github.com/leeebo/esp-batch-flash/)
+* [esp-serial-flasher](https://github.com/espressif/esp-serial-flasher)
+* [m5 launcher](https://github.com/bmorcelli/Launcher)
+
+## Resources
+* [esp-serial-flasher youtube video](https://www.youtube.com/watch?v=hYqkOew8y8w)
+
+## Ideal feature set
+1. select which bins to flash from sd card
+1. Flash multiple boards in parallel
+1. automatically select board type
+1. standalone battery powered device
+1. passthrough flashing (upload bin from computer to many esps)?
+1. Download bins OTA from a given repo, or set of repos
+
+## Minimal feature set
+1. select which bins to flash from sd card
+1. Flash multiple boards in parallel, or sequentially
+1. Verify uploads
