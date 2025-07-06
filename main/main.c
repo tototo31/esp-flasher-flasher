@@ -20,7 +20,7 @@
 static const char *TAG = "serial_flasher";
 
 #define HIGHER_BAUDRATE 230400
-
+//#define HIGHER_BAUDRATE 115200
 // Max line size
 #define BUF_LEN 128
 static uint8_t buf[BUF_LEN] = {0};
@@ -48,8 +48,8 @@ void app_main(void)
         .uart_port = UART_NUM_1,
         .uart_rx_pin = GPIO_NUM_5,
         .uart_tx_pin = GPIO_NUM_4,
-        .reset_trigger_pin = GPIO_NUM_45,
-        .gpio0_trigger_pin = GPIO_NUM_26,
+        .reset_trigger_pin = GPIO_NUM_7,
+        .gpio0_trigger_pin = GPIO_NUM_6,
     };
 
     if (loader_port_esp32_init(&config) != ESP_LOADER_SUCCESS) {
